@@ -6,7 +6,9 @@ import ComponentA from './Components/ComponentA';
 // data pass from parent to nested child through props is cases lacking in application  so thats why use useContext hook.
 // props drilling avoiding
 
-// first way to use context
+//firts case : create context and provide value to main componet and use these value as consumner ::: example component C
+//second case : create context and prvide value to main componet and use usecontext hook to hnadle these provider value ::: example component B
+
 export const userContext = React.createContext();
 export const channelContext = React.createContext();
 

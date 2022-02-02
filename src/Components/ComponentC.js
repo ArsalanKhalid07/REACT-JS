@@ -1,13 +1,14 @@
 import React from 'react';
 import { channelContext, userContext } from '../App';
 export default function ComponentC() {
+  //fisrt way to use context by consumer
   return (
     <div>
-      <userContext.Consumer>
-        {(user) => {
+      <channelContext.Consumer>
+        {(channel) => {
           return (
-            <channelContext.Consumer>
-              {(channel) => {
+            <userContext.Consumer>
+              {(user) => {
                 return (
                   <div>
                     Component C {user.class} and the channel context{' '}
@@ -15,10 +16,10 @@ export default function ComponentC() {
                   </div>
                 );
               }}
-            </channelContext.Consumer>
+            </userContext.Consumer>
           );
         }}
-      </userContext.Consumer>
+      </channelContext.Consumer>
     </div>
   );
 }
